@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Basic HTML5 Template</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <!-- your content here... -->
+    <div>
+        <p>What's your Boundry?</p>
+    </div>
+  
+    <div>
+        <video id="myVideo" width="640" height="360" controls>
+            <source src="video.mp4" type="video/mp4">
+        </video> 
+    </div>
+
+    <div>
+        <button onclick="playVid()" type="button">Play Video</button>
+        <button onclick="pauseVid()" type="button">Pause Video</button>
+        <button onclick="reportBoundry()" type="button">Report Boundry!</button>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script> 
+    
+        var vid = document.getElementById("myVideo"); 
+        
+        function playVid() { 
+            vid.play(); 
+        } 
+        
+        function pauseVid() { 
+            vid.pause(); 
+        }     
+
+        function reportBoundry() { 
+            curTime = vid.currentTime;
+            console.log(curTime)
+        }     
+
+        
+    </script> 
+
+</body>
+</html>
