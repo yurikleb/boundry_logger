@@ -9,10 +9,14 @@
 
 </head>
 
-<body>
+<body onload="update_uuid()">
   <!-- your content here... -->
     <div>
         <p>What's your Boundry?</p>
+        <p>
+            <span>Your User ID:</span>
+            <span id="user_id">0000</span>    
+        </p>
     </div>
   
     <div>
@@ -25,6 +29,13 @@
         <button onclick="playVid()" type="button">Play Video</button>
         <button onclick="pauseVid()" type="button">Pause Video</button>
         <button onclick="reportBoundry()" type="button">Report Boundry!</button>
+    </div>
+
+    <div>
+        <p>
+            <span>Boundry Time:</span>
+            <span id="boundry_time">0</span>
+        </p>
     </div>
 
     <script src="js/scripts.js"></script>
@@ -42,10 +53,22 @@
 
         function reportBoundry() { 
             curTime = vid.currentTime;
-            console.log(curTime)
-        }     
+            document.getElementById("boundry_time").innerHTML = curTime;
+            console.log(curTime);
+        }
 
+        function uuidv4() {
+            return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+                (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+            );
+        }
         
+        function update_uuid(){
+            var uuid = uuidv4();
+            document.getElementById("user_id").innerHTML = uuid;
+            console.log(uuid);
+        }
+           
     </script> 
 
 </body>
